@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Playdate
+
+A simple app designed for parents and caregivers to plan, host and join local events and activity.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
