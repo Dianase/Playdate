@@ -1,16 +1,13 @@
 import React from 'react';
-import FixedNav from './components/FixedNav';
-import Hero from './components/Hero'
 import './App.css';
+import FixedNav from './components/FixedNav';
+import Hero from './components/Hero';
+
 
 function App() {
   return (
     <>
-    <div className="App">
-      <header className="App-header">
-       <FixedNav/>
-      </header>
-    </div>
+    <FixedNav/>
     <Hero/>
     </>
   );
