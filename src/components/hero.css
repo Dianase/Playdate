@@ -1,5 +1,8 @@
-.hero{
-  padding: 12px;
-  margin: 50px;
-  height: 12000px;
-}
+
+  .container {
+    background-color: rgba(255, 255, 255, .15);   
+  }
+  .container {
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+   }

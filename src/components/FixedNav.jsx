@@ -1,15 +1,33 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import { Navbar } from 'react-bootstrap'
+import { Navbar, Dropdown } from 'react-bootstrap'
 
 
 export default function FixedNav(){
   return(
-    <Navbar bg="dark" variant="dark" fixed="top">
+    <Navbar bg="dark" variant="dark" fixed="top" style={{display:"flex"}}>
       <Navbar.Brand >
-        <img src="logo.png" height="20px" />
-        XPLORE
+        <img src="xlogo.png" height="80px" style={{padding:"5px" }} />
       </Navbar.Brand>
-
+      <Dropdown style={{padding:"15px" }} >
+        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+        Xplore Events
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item href="#/action-1">Educational Activities</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Sports & Outdoors</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Gaming & Computer</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      <Dropdown style={{padding:"15px" }} >
+        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+        Xplore Places
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item href="#/action-1">Park & Playgrounds</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Museums & Something</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Nature Centers & Sumelse</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </Navbar>
   )
 }
