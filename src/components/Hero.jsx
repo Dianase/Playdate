@@ -20,8 +20,8 @@ export default function Hero(){
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="facepaint.jpg"
-      alt="blonde kid with raimbow color paint on face"
+      src="threelittlegirls.jpg"
+      alt="three young girls inside a teepee smiling and laughing"
     />
     <Carousel.Caption className="container">
       <h3>Arts & Craft</h3>
@@ -39,7 +39,28 @@ export default function Hero(){
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="unicorngirl.jpg"
+      alt="little girl with pink dress holding a unicorn storybook"
+    />
+    <Carousel.Caption className="container">
+      <h3>BookClub & Pretend Play</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="fingerpaint.jpg"
+      alt="kid with colorful paint all over hands"
+    />
+    <Carousel.Caption className="container">
+      <h3>Skillshare & Workshops</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
 </Carousel>
-    <img />
   </div>)
 }
