@@ -3,7 +3,7 @@ import '../styles/activity.css'
 
 export default function Activity({activity}){
  return (
-  <div className="activity-card">
+  <div className="activity-card" >
   <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="teachingkids.png" alt="curly-haired young woman teaching diverse group of children"/>
   <Card.Body>
@@ -19,8 +19,7 @@ export default function Activity({activity}){
     <ListGroupItem>{new Date(activity.happening._seconds * 1000).toLocaleString()}</ListGroupItem>
   </ListGroup>
   <Card.Body>
-    <Card.Link href="#">Join Activity</Card.Link>
-    <Card.Link href="#">More Info</Card.Link>
+    <Card.Link >Join Activity</Card.Link>
   </Card.Body>
 </Card>
 </div>
