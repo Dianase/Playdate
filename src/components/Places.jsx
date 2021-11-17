@@ -2,8 +2,8 @@
 
 export default function Places(){
   return (
-  <div>
-    <h1>Xplore Places:</h1>
+  <div style={{margin:"500px"}}>
+    <h1>Xplore All Places:</h1>
   </div>
   )
 }

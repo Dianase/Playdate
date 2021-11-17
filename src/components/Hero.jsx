@@ -4,9 +4,9 @@ import { Carousel } from "react-bootstrap";
 
 export default function Hero() {
   return (
-    <div className="hero">
-      <Carousel variant="dark">
-        <Carousel.Item>
+    <div >
+      <Carousel className="hero" variant="dark" style={{display:"flex"}}>
+        <Carousel.Item >
           <img
             className="d-block w-100"
             src="splashingkids.jpg"
@@ -23,7 +23,7 @@ export default function Hero() {
             src="threelittlegirls.jpg"
             alt="three young girls inside a teepee smiling and laughing"
           />
-          <Carousel.Caption className="container">
+          <Carousel.Caption className="container" >
             <h3>Arts & Craft</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>

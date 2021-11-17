@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { useState, useEffect } from 'react'
-import { Spinner } from "react-bootstrap";
-import Activity from './Activity';
+import { Spinner } from "react-bootstrap"
+import Activity from './Activity'
+import {Form} from 'react-bootstrap'
 
 
 
@@ -29,3 +30,5 @@ export default function Events(){
     </div>
     
   )}
+  
+  

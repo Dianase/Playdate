@@ -29,9 +29,9 @@ export default function Login(){
     })
   }
   return(
-    <div>
-      <Form onSubmit={handleLogin}>
-        <Form.Group as={Row} className="mb-3" controlId="formBasicEmail">
+   
+      <Form onSubmit={handleLogin} style={{margin: "350px"}}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
         <Form.Text className="text-muted">
@@ -48,12 +48,12 @@ export default function Login(){
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Remember me" />
         </Form.Group>
-        <Button variant="primary" type="submit" style={{padding:"10px"}} onSubmit={loginWithGoogle}>
+        <Button variant="primary" type="submit" style={{padding:"10px", margin:"25px"}} onSubmit={loginWithGoogle}>
                 Login with Google</Button>
-        <Button variant="primary" type="submit" style={{padding:"10px"}} onSubmit={handleLogin}>
+        <Button variant="secondary" type="submit" style={{padding:"10px"}} onSubmit={handleLogin}>
                 Submit</Button>
       </Form>
-    </div>
+     
   )
 
 }
