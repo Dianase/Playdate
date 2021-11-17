@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { Navbar, Dropdown } from 'react-bootstrap'
 import {
   BrowserRouter as Router,
-  Link
 } from "react-router-dom";
 
 
@@ -19,7 +18,7 @@ export default function FixedNav(){
           Xplore Events
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item href="#/"><Link to="/events">Educational Activities</Link></Dropdown.Item>
+            <Dropdown.Item href="#/">Educational Activities</Dropdown.Item>
             <Dropdown.Item href="#/action-2"> Sports & Outdoors</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Gaming & Computer</Dropdown.Item>
           </Dropdown.Menu>

@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "./hero.css";
+import "../styles/hero.css";
 import { Carousel } from "react-bootstrap";
 
 export default function Hero() {
