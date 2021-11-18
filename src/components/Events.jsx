@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { useState, useEffect } from 'react'
 import { Spinner } from "react-bootstrap"
 import Activity from './Activity'
-import {Form} from 'react-bootstrap'
+
 
 
 
@@ -16,6 +16,7 @@ export default function Events(){
     .then(setEvents)
     .catch(alert)
   }, [])
+
   
   return (
     <div style={{backgroundColor: "#dfecf8", textAlign: "center", padding: "50px"}}>

@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Signup from './components/Signup';
+import CreateEvent from './components/CreateEvent';
 
 export const UserContext = createContext()
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Events" element={<Events/>}/>
         <Route path="/Signup" element={<Signup/>}/>
         <Route path="/Login" element={<Login/>}/>
+        <Route path="/CreateEvent" element={<CreateEvent/>}/>
         <Route path="/" element={<Home/>}/>
       </Routes>
       <Footer/>
