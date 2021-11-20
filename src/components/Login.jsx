@@ -1,17 +1,10 @@
 import { initializeApp } from "firebase/app";
-import 'bootstrap/dist/css/bootstrap.css'
-import {Form, Button, Row} from 'react-bootstrap'
-import {  useState } from "react";
+import {Form, Button} from 'react-bootstrap'
 
 import firebaseConfig from "../credentials";
-
-
-
 import {getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
 
 export default function Login(){
-  const [user, setUser] = useState()
- 
   
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app)
@@ -24,13 +17,18 @@ export default function Login(){
     e.preventDefault()
     const provider = new GoogleAuthProvider()
     signInWithPopup(auth, provider)
-    .then(response => {
-    setUser(response.user)
+    .then((response) => {
+      const credential = GoogleAuthProvider.credentialFromResult(response)
+      const token = credential.accessToken;
+      const user = response.user
+    }).catch((error)=> {
+     alert(error)
     })
   }
   return(
    
       <Form onSubmit={handleLogin} style={{margin: "350px"}} >
+        <h2 style={{textAlign:"center", padding: "0px"}}>Login to Xplore</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
@@ -50,10 +48,10 @@ export default function Login(){
         </Form.Group>
         <Button variant="primary" type="submit" style={{padding:"10px", margin:"25px"}} onSubmit={loginWithGoogle}>
                 Login with Google</Button>
-        <Button variant="secondary" type="submit" style={{padding:"10px"}} onSubmit={handleLogin}>
+        <Button variant="secondary" type="submit" style={{padding:"10px", margin:"25px"}} onSubmit={handleLogin}>
                 Submit</Button>
       </Form>
-     
+    
   )
 
 }

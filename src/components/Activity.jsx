@@ -1,11 +1,16 @@
-import { ListGroupItem, Card, ListGroup } from 'react-bootstrap'
+import { ListGroupItem, Card, ListGroup, Modal } from 'react-bootstrap'
 import '../styles/activity.css'
 
+
+
+
 export default function Activity({activity}){
+
  return (
+   <Modal>
   <div className="activity-card" >
   <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="teachingkids.png" alt="curly-haired young woman teaching diverse group of children"/>
+  <Card.Img variant="top" src={activity.image} alt="related to the type of activity"/>
   <Card.Body>
     <Card.Title>{activity.name}</Card.Title>
     <Card.Text>
@@ -23,5 +28,7 @@ export default function Activity({activity}){
   </Card.Body>
 </Card>
 </div>
+</Modal>
+
  )
 }

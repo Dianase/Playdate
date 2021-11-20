@@ -19,7 +19,7 @@ export default function Events(){
 
   
   return (
-    <div style={{backgroundColor: "#dfecf8", textAlign: "center", padding: "50px"}}>
+    <div style={{backgroundColor: "#dfecf8", textAlign: "center", padding: "50px", margin:"200px"}}>
       {!events
        ? <Spinner animation="border" role="status">
        <span className="visually-hidden">Loading...</span>
