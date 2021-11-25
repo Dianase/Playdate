@@ -8,7 +8,7 @@ export default function Hero() {
       <Carousel className="hero" variant="dark" >
         <Carousel.Item>
           <img 
-            className="d-block w-100"
+            className="d-block w-100 h-50"
             src="splashingkids.jpg"
             alt="woman and three children sitting with feet in pool splash kicking"
             />

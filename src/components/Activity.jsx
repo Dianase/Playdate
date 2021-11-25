@@ -1,22 +1,28 @@
-import { ListGroupItem, Card, ListGroup, Modal } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import { ListGroupItem, Card, ListGroup } from 'react-bootstrap'
 import '../styles/activity.css'
 
-
-
-
 export default function Activity({activity}){
-
+  const [image, setImage] = useState("Kidtennis.jpg")
+  useEffect(() => {
+    switch (activity.type) {
+      case 'sports': setImage("kidstennis.jpg");
+        break;
+      case 'educational': setImage("teachingkids.png");
+        break;
+      case 'gaming': setImage("gaming.png");
+        break;
+      default: setImage("Xlogobg.png");
+    }
+  }, [activity])
+  
  return (
-   <Modal>
   <div className="activity-card" >
   <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={activity.image} alt="related to the type of activity"/>
+  <Card.Img variant="top" src={image} alt="related to the type of activity"/>
   <Card.Body>
     <Card.Title>{activity.name}</Card.Title>
-    <Card.Text>
-    Some quick example text to build on the card title and make up the bulk of
-    the card's content.
-    </Card.Text>
+    <Card.Text>{activity.description}</Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
     <ListGroupItem>{activity.type}</ListGroupItem>
@@ -28,7 +34,7 @@ export default function Activity({activity}){
   </Card.Body>
 </Card>
 </div>
-</Modal>
+
 
  )
 }

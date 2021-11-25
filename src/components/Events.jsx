@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/events.css'
 import { useState, useEffect } from 'react'
 import { Spinner } from "react-bootstrap"
 import Activity from './Activity'
-
-
-
 
 
 export default function Events(){
@@ -19,7 +17,7 @@ export default function Events(){
 
   
   return (
-    <div style={{backgroundColor: "#dfecf8", textAlign: "center", padding: "50px", margin:"200px"}}>
+    <div className="events-page" >
       {!events
        ? <Spinner animation="border" role="status">
        <span className="visually-hidden">Loading...</span>

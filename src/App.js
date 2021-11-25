@@ -9,20 +9,25 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import CreateEvent from "./components/CreateEvent";
-import './styles/App.css'
+import "./styles/App.css";
+import Dashboard from "./components/Dashboard";
 
 export const UserContext = createContext(null);
 
 function App() {
   const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <>
-      <UserContext.Provider value={{ user, setUser }}>
+    <div>
+      <UserContext.Provider
+        value={{ user, setUser, isLoggedIn, setIsLoggedIn }}
+      >
         <Router>
           <header className="App-header">
             <FixedNav />
           </header>
           <Routes>
+            <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/Places" element={<Places />} />
             <Route path="/Events" element={<Events />} />
             <Route path="/Signup" element={<Signup />} />
@@ -33,7 +38,7 @@ function App() {
           <Footer />
         </Router>
       </UserContext.Provider>
-    </>
+    </div>
   );
 }
 
