@@ -1,8 +1,13 @@
-import Hero from "./Hero"
+import FixedNav from "./FixedNav";
+import Hero from "./Hero";
 
-export default function Home(){
+export default function Home() {
   return (
-     <Hero/>
-  )
-  
+    <>
+      <header className="App-header">
+        <FixedNav />
+      </header>
+      <Hero />
+    </>
+  );
 }

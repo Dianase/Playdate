@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { initializeApp } from "firebase/app";
 import {Form, Button} from 'react-bootstrap'
+import '../styles/login.css'
 import { UserContext } from "../App";
 import firebaseConfig from "../credentials";
 import {getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth"
@@ -20,7 +21,7 @@ export default function Login(){
     localStorage.setItem('jwt', jwt);
     setUser(creds.user)
     setIsLoggedIn(true)
-    navigate("/Dashboard");
+    navigate("/Profile");
     
   }
 
@@ -38,9 +39,10 @@ export default function Login(){
       .catch(alert)
   }
   return(
-   
-      <Form onSubmit={handleLogin} style={{margin: "350px"}} >
-        <h2 style={{textAlign:"center", padding: "0px"}}>Login to Xplore</h2>
+    <div className="login-form">
+      <Form onSubmit={handleLogin} >
+        <img src="Xlogobg.png" alt="app logo with word xplore" style={{height:"120px"}}/>
+        <h2 style={{textAlign:"center", padding: "20px"}}>Login to Xplore</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control 
@@ -69,7 +71,7 @@ export default function Login(){
         <Button variant="secondary" style={{padding:"10px", margin:"25px"}} onClick={loginWithGoogle}>
                 Login with Google</Button>
       </Form>
-    
+      </div>
   )
 
 }

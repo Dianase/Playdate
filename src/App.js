@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 import "./styles/App.css";
-import FixedNav from "./components/FixedNav";
 import Events from "./components/Events";
 import Footer from "./components/Footer";
 import Places from "./components/Places";
@@ -11,6 +10,9 @@ import Signup from "./components/Signup";
 import CreateEvent from "./components/CreateEvent";
 import "./styles/App.css";
 import Dashboard from "./components/Dashboard";
+import MyActivities from "./components/MyActivities";
+import MyPlaces from "./components/MyPlaces";
+import MyProfile from "./components/MyProfile";
 
 export const UserContext = createContext(null);
 
@@ -23,11 +25,11 @@ function App() {
         value={{ user, setUser, isLoggedIn, setIsLoggedIn }}
       >
         <Router>
-          <header className="App-header">
-            <FixedNav />
-          </header>
           <Routes>
             <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/Profile" element={<MyProfile />} />
+            <Route path="/My-Activities" element={<MyActivities />} />
+            <Route path="/My-Places" element={<MyPlaces />} />
             <Route path="/Places" element={<Places />} />
             <Route path="/Events" element={<Events />} />
             <Route path="/Signup" element={<Signup />} />

@@ -5,7 +5,14 @@
   color: white;
 }
  .carousel-caption{
-   min-height: 80vh;
+   display: flex;
+   justify-content: center;
+   background-color: rgba(255, 255, 255, .15);  
+   backdrop-filter: blur(5px);
+   align-self: center;
+   bottom: 300px;
+   border-radius: 16px;
+   font-weight: bolder;
  }
 
 
@@ -13,4 +20,8 @@ element.style {
   height: 500px !important;
 }
 
-
+.hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
