@@ -15,7 +15,7 @@ export default function Places(){
   }, [])
 
   const goBack = () =>{
-    navigate("/Dashboard")
+    navigate("/Profile")
   }  
   return (
     <div className="places-page" >

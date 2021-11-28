@@ -124,7 +124,7 @@ export default function CreateEvent() {
           </Form.Label>
           <Form.Select
             value={type}
-            onChange={(e) => setType(e.currentTarget.value)}
+            onChange={(e) => setType(e.target.value)}
             className="me-sm-2"
             id="inlineFormCustomSelect"
           >

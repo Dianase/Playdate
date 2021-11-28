@@ -67,22 +67,16 @@ span{
   justify-content: flex-end;
 
 }
-.dash-img{
-  height: 120px;
-  margin: 15px;
-}
-.my-activities{
+
+.my-places, .my-activities{
   height: 90vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
-.my-places, .my-activities{
-  display: flex;
-  text-align: center;
-  
-} 
+
 .add-btn a:hover{
   background-color: lightskyblue;
 }

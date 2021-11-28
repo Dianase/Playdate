@@ -1,0 +1,13 @@
+.profile-heading{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.welcome-msg{
+  margin-right: 30px;
+}
+.dash-img{
+  height: 120px;
+  margin: 15px;
+}

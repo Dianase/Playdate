@@ -28,7 +28,6 @@ export default function Events() {
       </span>
       <div className="events-page">
         <span>
-          <Dashboard/>
           <img
             src="Xlogobg.png"
             alt="Xplore logo with red X"

@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ListGroupItem, Card, ListGroup, Button, Modal } from "react-bootstrap";
 import "../styles/activity.css";
 
 export default function Activity({ activity }) {
-  // const [image, setImage] = useState(" ")
-  // useEffect(() => {
-  //   switch (activity.type) {
-  //     case 'sports': setImage("kidstennis.jpg");
-  //       break;
-  //     case 'educational': setImage("teachingkids.png");
-  //       break;
-  //     case 'gaming': setImage("gaming.png");
-  //       break;
-  //     default: setImage("Xlogobg.png");
-  //   }
-  // }, [activity])
+  const [image, setImage] = useState(" ")
+  useEffect(() => {
+    if(activity.type === 'educational') {
+      setImage("Xlogobg.png");
+        setImage();
+    }
+  }, [activity])
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
