@@ -8,7 +8,6 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import CreateEvent from "./components/CreateEvent";
-import "./styles/App.css";
 import Dashboard from "./components/Dashboard";
 import MyActivities from "./components/MyActivities";
 import MyPlaces from "./components/MyPlaces";
@@ -37,9 +36,9 @@ function App() {
             <Route path="/CreateEvent" element={<CreateEvent />} />
             <Route path="/" element={<Home />} />
           </Routes>
-          <Footer />
         </Router>
       </UserContext.Provider>
+      <Footer />
     </div>
   );
 }

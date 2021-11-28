@@ -47,6 +47,7 @@ border-radius: 4px;
 }
 .nav-text a:hover{
   background-color: lightskyblue;
+  
 }
 .nav-menu-items{
   width: 100%;
@@ -79,4 +80,5 @@ span{
 
 .add-btn a:hover{
   background-color: lightskyblue;
+  
 }

@@ -1,19 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ListGroupItem, Card, ListGroup, Button, Modal } from "react-bootstrap";
 import "../styles/activity.css";
 
 export default function Activity({ activity }) {
-  const [image, setImage] = useState(" ")
-  useEffect(() => {
-    if(activity.type === 'educational') {
-      setImage("Xlogobg.png");
-        setImage();
-    }
-  }, [activity])
+  // const [image, setImage] = useState(" ")
+  // useEffect(() => {
+  //   if(activity.type === 'educational') {
+  //     setImage("Xlogobg.png");
+  //       setImage();
+  //   }
+  // }, [activity])
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // const joinActivity = (act, name) =>{
+//   const rsvp = act.attendes;
+    //rsvp.push(name)
+  // }
 
   return (
     <>
