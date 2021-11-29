@@ -4,6 +4,7 @@ import { UserContext } from "../App";
 import { Form, Col, Button, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import '../styles/events.css'
+import { config } from "../config";
 
 export default function CreateEvent() {
   const [activity, setActivity] = useState("");
@@ -30,7 +31,7 @@ export default function CreateEvent() {
       type: type,
     };
     
-    fetch("https://dt-playdate-api.web.app/events", {
+    fetch(`${config.prodApiUrl}/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

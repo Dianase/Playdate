@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Spinner, Button } from "react-bootstrap";
 import Activity from "./Activity";
+import { config } from "../config";
 
 export default function Events() {
   const [events, setEvents] = useState("");

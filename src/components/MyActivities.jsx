@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 import { Spinner } from "react-bootstrap";
 import Activity from "./Activity"
+import { config } from "../config";
 
 import "../styles/dash.css";
 import { BsFillPlusCircleFill } from 'react-icons/bs'
