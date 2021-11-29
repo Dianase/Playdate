@@ -9,7 +9,7 @@ export default function Events() {
   const [events, setEvents] = useState("");
   let navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/events")
+    fetch("http://dt-playdate-api.web.app/events")
       .then((response) => response.json())
       .then(setEvents)
       .catch(alert);

@@ -29,7 +29,8 @@ export default function CreateEvent() {
       organizer: organizer,
       type: type,
     };
-    fetch("http://localhost:5000/events", {
+    
+    fetch("http://dt-playdate-api.web.app/Activities", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ export default function FixedNav(){
   return (
       <Navbar bg="azure" variant="dark" fixed="top" className="navbar" >
         <Navbar.Brand >
-          <img src="xlogobg.png" className="nav-logo" alt="Xplore logo a map with red X marks the spot"  />
+          <img src="Xlogobg.png" className="nav-logo" alt="Xplore logo a map with red X marks the spot"  />
         </Navbar.Brand>
         {/* <Button variant="light" className="nav-btn" onClick={goToEvents}>Xplore Activities</Button>
         <Button variant="light" className="nav-btn" onClick={goToPlaces}>Xplore Places</Button> */}

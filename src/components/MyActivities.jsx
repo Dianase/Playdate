@@ -15,7 +15,7 @@ export default function MyActivities() {
   const [activities, setActivities] = useState("");
   
   useEffect(() => {
-    fetch("http://localhost:5000/myactivities")
+    fetch("http://dt-playdate-api.web.app/myactivities")
       .then((response) => response.json())
       .then(setActivities)
       .catch(alert);

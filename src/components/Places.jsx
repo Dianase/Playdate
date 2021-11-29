@@ -7,7 +7,7 @@ export default function Places() {
   const [places, setPlaces] = useState("");
   let navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/Places")
+    fetch("http://dt-playdate-api.web.app/Places")
       .then((response) => response.json())
       .then(setPlaces)
       .catch(alert);
