@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Spinner, Button, Card } from "react-bootstrap";
+import { config } from "../config";
 import "../styles/places.css";
 
 export default function Places() {
   const [places, setPlaces] = useState("");
   let navigate = useNavigate();
   useEffect(() => {
-    fetch("http://dt-playdate-api.web.app/Places")
+    fetch(`${config.prodApiUrl}/Places`)
       .then((response) => response.json())
       .then(setPlaces)
       .catch(alert);

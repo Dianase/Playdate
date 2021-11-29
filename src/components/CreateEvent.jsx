@@ -30,7 +30,7 @@ export default function CreateEvent() {
       type: type,
     };
     
-    fetch("http://dt-playdate-api.web.app/Activities", {
+    fetch("https://dt-playdate-api.web.app/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

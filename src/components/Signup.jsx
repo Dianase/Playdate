@@ -27,7 +27,7 @@ export default function Signup( ) {
       uid,
     };
 
-    fetch(`${config.apiUrl}/users`, {
+    fetch(`${config.proUrl}/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
