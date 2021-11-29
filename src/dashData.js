@@ -27,7 +27,7 @@ export const dashboardData = [
   },
   {
     title: "My Favorite Places",
-    path: "/Places",
+    path: "/My-Places",
     icon: <BsIcons.BsTree />,
     cName: "nav-text",
   },

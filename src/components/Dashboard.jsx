@@ -11,9 +11,6 @@ export default function Dashboard() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-  console.log(showSidebar);
-
-  
 
   return (
     <>

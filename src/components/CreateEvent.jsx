@@ -12,6 +12,7 @@ export default function CreateEvent() {
   const [time, setTime] = useState("");
   const [organizer, setOrganizer] = useState("");
   const [type, setType] = useState("");
+  const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
   const { user } = useContext(UserContext);
   let navigate = useNavigate()
@@ -23,6 +24,7 @@ export default function CreateEvent() {
       name: activity,
       location: location,
       date: date,
+      image: image,
       time: time,
       organizer: organizer,
       type: type,
@@ -56,7 +58,7 @@ export default function CreateEvent() {
       <h2 style={{ padding: "50px" }}>Create an Activity</h2>
     
       <Row className="align-items-center">
-        <Col xs={1} />
+        
         <Col xs={9}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>
@@ -114,7 +116,7 @@ export default function CreateEvent() {
               onChange={(e) => setOrganizer(e.target.value)}
             />
           </Form.Group>
-          
+          <Form.Group>
           <Form.Label
             className="me-sm-2"
             htmlFor="inlineFormCustomSelect"
@@ -128,12 +130,33 @@ export default function CreateEvent() {
             className="me-sm-2"
             id="inlineFormCustomSelect"
           >
-            <option value="other">Select Type</option>
+            <option >Select Type</option>
             <option value="educational">Educational</option>
             <option value="sports">Sports/Outdoors</option>
             <option value="gaming">Gaming & Computers</option>
             <option value="other">Other</option>
           </Form.Select>
+          </Form.Group>
+          <Form.Group>
+          <Form.Label
+            className="me-sm-2"
+            htmlFor="inlineFormCustomSelect"
+            placeholder="Choose Image"
+          >
+          </Form.Label>
+          <Form.Select
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            className="me-sm-2"
+            id="inlineFormCustomSelect"
+          >
+            <option >Select Type</option>
+            <option value="yogame.jpg">Yoga</option>
+            <option value="jiujitsu.jpg">Jiu Jitsu</option>
+            <option value="ballpit.jpg">Playdate</option>
+            <option value="gaming.png">Video Games</option>
+          </Form.Select>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>
               <h4 style={{padding:"10px"}}>Event Description</h4>
@@ -150,8 +173,8 @@ export default function CreateEvent() {
         <Col xs={2} />
       </Row>
       
-      <Col xs={2} className="my-1">
-        <Button type="submit" onClick={newEvent}>Create</Button>
+      <Col xs="auto" className="my-4">
+        <Button type="submit" onClick={newEvent} className="create-btn">Create</Button>
       </Col>
     </Form>
     </div>

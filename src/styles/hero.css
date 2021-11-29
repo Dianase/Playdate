@@ -16,9 +16,6 @@
  }
 
 
-element.style {
-  height: 500px !important;
-}
 
 .hero{
   display: flex;

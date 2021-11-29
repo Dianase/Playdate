@@ -8,8 +8,12 @@
   display: flex;
   justify-content: center;
   padding: 30px;
+  
 }
 
 .my-activities{
 height: 100%;
+}
+.create-btn{
+  margin-left: 90px
 }

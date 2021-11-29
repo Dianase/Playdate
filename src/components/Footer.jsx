@@ -1,11 +1,8 @@
 import React from "react";
 import * as AiIcons from "react-icons/ai";
-import { FaReact } from "react-icons/fa";
-
-import { SiJavascript } from "react-icons/si";
 import "../styles/footer.css";
 
-export default function Footer({ children, ...restProps }) {
+export default function Footer() {
   return (
     <div className="footer">
       <div>
