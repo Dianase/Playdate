@@ -1,6 +1,5 @@
 export const config = {
-    prodApiUrl: "https://dt-playdate-api.web.app"
-   // "http://localhost:5000"
-    
+    prodApiUrl: "http://localhost:5000"
+    //"https://dt-playdate-api.web.app"
     
 }

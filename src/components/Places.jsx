@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router";
+import { UserContext } from "../App";
 import { Spinner, Button, Card, Modal } from "react-bootstrap";
 import { config } from "../config";
 import "../styles/places.css";
@@ -7,6 +8,7 @@ import "../styles/places.css";
 export default function Places({ place }) {
   const [places, setPlaces] = useState("");
   const [show, setShow] = useState(false);
+  const { user } = useContext(UserContext);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let navigate = useNavigate();
@@ -18,9 +20,24 @@ export default function Places({ place }) {
       .catch(alert);
   }, []);
 
+  const handleFavorite = () => {
+    
+    fetch(`${config.prodApiUrl}/favorites`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " +  user?.accessToken
+      },
+      body: JSON.stringify(place),
+    })
+    .then(() => handleShow())
+    .catch(alert)
+  };
+
   const goBack = () => {
     navigate("/Profile");
   };
+  
   return (
     <div className="places-page">
       <div>
@@ -63,7 +80,7 @@ export default function Places({ place }) {
                 <Card.Body>
                   <Card.Title>{place.name}</Card.Title>
                   <Card.Text>{place.hours}</Card.Text>
-                  <Button variant="danger" onClick={handleShow}>Add to Favorites</Button>
+                  <Button variant="danger" onClick={handleFavorite}>Add to Favorites</Button>
                 </Card.Body>
               </Card>
             </div>

@@ -1,24 +1,29 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../App";
 import { ListGroupItem, Card, ListGroup, Button, Modal } from "react-bootstrap";
 import "../styles/activity.css";
+import { config } from "../config";
 
 export default function Activity({ activity }) {
-  // const [image, setImage] = useState(" ")
-  // useEffect(() => {
-  //   if(activity.type === 'educational') {
-  //     setImage("Xlogobg.png");
-  //       setImage();
-  //   }
-  // }, [activity])
-
+  const { user } = useContext(UserContext);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const joinActivity = (act, name) =>{
-//   const rsvp = act.attendes;
-    //rsvp.push(name)
-  // }
+  const handleJoin = () => {
+   console.log({ user })
+    fetch(`${config.prodApiUrl}/myactivities`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " +  user?.accessToken
+      },
+      body: JSON.stringify(activity),
+    })
+    .then(() => handleShow())
+    .catch(alert)
+  };
+
 
   return (
     <>
@@ -56,10 +61,9 @@ export default function Activity({ activity }) {
               {new Date(activity.happening._seconds * 1000).toLocaleString()}
             </ListGroupItem>
             <ListGroupItem>{activity.type}</ListGroupItem>
-            <Card.Text>{activity.description}</Card.Text>
           </ListGroup>
           <Card.Body>
-            <Button variant="info" onClick={handleShow}>
+            <Button variant="info" onClick={handleJoin}>
               Join Activity
             </Button>
           </Card.Body>

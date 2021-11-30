@@ -1,18 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import {Link} from "react-router-dom"
 import { Spinner } from "react-bootstrap";
 import Activity from "./Activity"
 import { config } from "../config";
-
 import "../styles/dash.css";
 import { BsFillPlusCircleFill } from 'react-icons/bs'
 
 export default function MyActivities() {
-
-  const jwt_token = localStorage.getItem("jwt");
-  // Make all api call with jwt token in header
-  // fetch(`dashboad_url`, { headers: {Authorization: jwt_token}}
-
   const [activities, setActivities] = useState("");
   
   useEffect(() => {
@@ -27,7 +21,7 @@ export default function MyActivities() {
       <div className="my-activities" >
         <h1>Here are your scheduled activities</h1>
         <p>Create an Activity</p>
-       <Link to="/CreateActivity"> <span className="add-btn"><BsFillPlusCircleFill size={70}/></span></Link>
+       <Link to="/CreateEvent"> <span className="add-btn"><BsFillPlusCircleFill size={70}/></span></Link>
       <div>{!activities ? (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
