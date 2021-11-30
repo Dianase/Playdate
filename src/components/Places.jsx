@@ -20,15 +20,15 @@ export default function Places({ place }) {
       .catch(alert);
   }, []);
 
-  const handleFavorite = () => {
-    
+  const handleFavorite = (thisPlace) => {
+    console.log({ user })
     fetch(`${config.prodApiUrl}/favorites`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " +  user?.accessToken
       },
-      body: JSON.stringify(place),
+      body: JSON.stringify(thisPlace),
     })
     .then(() => handleShow())
     .catch(alert)
@@ -37,7 +37,7 @@ export default function Places({ place }) {
   const goBack = () => {
     navigate("/Profile");
   };
-  
+
   return (
     <div className="places-page">
       <div>
@@ -73,18 +73,21 @@ export default function Places({ place }) {
       ) : (
         <div>
           <h1 >Xplore Places Near You</h1>
-          {places.map((place) => (
-            <div place={place} key={place.id} className="place-card">
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={place.image} />
-                <Card.Body>
-                  <Card.Title>{place.name}</Card.Title>
-                  <Card.Text>{place.hours}</Card.Text>
-                  <Button variant="danger" onClick={handleFavorite}>Add to Favorites</Button>
-                </Card.Body>
-              </Card>
-            </div>
-          ))}
+          {places.map((place) => {
+            const thisPlace = place;
+            return(
+              <div place={place} key={place.id} className="place-card">
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img variant="top" src={place.image} />
+                  <Card.Body>
+                    <Card.Title>{place.name}</Card.Title>
+                    <Card.Text>{place.hours}</Card.Text>
+                    <Button variant="danger" onClick={() => handleFavorite(thisPlace)}>Add to Favorites</Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            )
+            })}
         </div>
       )}
     </div>
