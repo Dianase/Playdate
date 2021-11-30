@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import '../styles/events.css'
 import { config } from "../config";
 
-export default function CreateEvent() {
+export default function CreateActivity() {
   const [activity, setActivity] = useState("");
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
@@ -31,7 +31,7 @@ export default function CreateEvent() {
       type: type,
     };
     
-    fetch(`${config.prodApiUrl}/events`, {
+    fetch(`${config.prodApiUrl}/myactivities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,14 +57,14 @@ export default function CreateEvent() {
     <div className="create-event" >
     <Form onSubmit={(e)=>{e.preventDefault()} } className="create-form">
       <img src="Xlogobg.png" alt="app logo with word xplore" style={{height:"110px"}}/>
-      <h2 style={{ padding: "50px" }}>Create an Activity</h2>
+      <h2 style={{ padding: "50px" }}>Host an Activity</h2>
     
       <Row className="align-items-center">
         
         <Col xs={9}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>
-              <h4>Event Name</h4>
+              <h4>Activity Name</h4>
             </Form.Label>
             <Form.Control
               type="text"

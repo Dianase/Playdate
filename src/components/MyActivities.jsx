@@ -27,7 +27,7 @@ export default function MyActivities() {
       <div className="my-activities" >
         <h1>Here are your scheduled activities</h1>
         <p>Create an Activity</p>
-       <Link to="/CreateEvent"> <span className="add-btn"><BsFillPlusCircleFill size={70}/></span></Link>
+       <Link to="/CreateActivity"> <span className="add-btn"><BsFillPlusCircleFill size={70}/></span></Link>
       <div>{!activities ? (
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>

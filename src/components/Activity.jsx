@@ -24,7 +24,6 @@ export default function Activity({ activity }) {
     <>
       <div className="activity-card">
         <div>
-          {" "}
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>You Joined {activity.name}!</Modal.Title>

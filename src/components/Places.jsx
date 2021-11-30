@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { Spinner, Button, Card } from "react-bootstrap";
+import { Spinner, Button, Card, Modal } from "react-bootstrap";
 import { config } from "../config";
 import "../styles/places.css";
 
-export default function Places() {
+export default function Places({ place }) {
   const [places, setPlaces] = useState("");
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   let navigate = useNavigate();
+
   useEffect(() => {
     fetch(`${config.prodApiUrl}/Places`)
       .then((response) => response.json())
@@ -19,6 +23,22 @@ export default function Places() {
   };
   return (
     <div className="places-page">
+      <div>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>You added {place?.name} to your Favorites!</Modal.Title>
+            </Modal.Header>
+           
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
       <span className="back-btn">
         <Button onClick={goBack}>Back</Button>
       </span>
@@ -43,7 +63,7 @@ export default function Places() {
                 <Card.Body>
                   <Card.Title>{place.name}</Card.Title>
                   <Card.Text>{place.hours}</Card.Text>
-                  <Button variant="danger">Add to Favorites</Button>
+                  <Button variant="danger" onClick={handleShow}>Add to Favorites</Button>
                 </Card.Body>
               </Card>
             </div>

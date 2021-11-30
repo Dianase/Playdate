@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard";
 import MyActivities from "./components/MyActivities";
 import MyPlaces from "./components/MyPlaces";
 import MyProfile from "./components/MyProfile";
+import CreateActivity from "./components/CreateActivities";
 
 export const UserContext = createContext(null);
 
@@ -27,6 +28,7 @@ function App() {
           <Routes>
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/Profile" element={<MyProfile />} />
+            <Route path="/CreateActivity" element={<CreateActivity />} />
             <Route path="/My-Activities" element={<MyActivities />} />
             <Route path="/My-Places" element={<MyPlaces />} />
             <Route path="/Places" element={<Places />} />
