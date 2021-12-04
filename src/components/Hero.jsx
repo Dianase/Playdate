@@ -58,6 +58,13 @@ export default function Hero() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div className="info">
+        <h1>Here is some details about the app</h1>
+        
+      </div>
+      <div className="info">
+        <h1>Here is some details about the app</h1>
+      </div>
     </div>
   );
 }
