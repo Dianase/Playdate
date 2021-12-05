@@ -1,6 +1,7 @@
 .navbar{
   display: flex;
   justify-content: space-between;
+  
 }
 .nav-logo{
   height: 120px;
@@ -11,4 +12,8 @@
 }
 .nav-btn:hover{
   background-color: lightskyblue;
+}
+.gs-btn{
+  margin: 20px;
+  
 }

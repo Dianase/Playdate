@@ -12,6 +12,8 @@ import Dashboard from "./components/Dashboard";
 import MyActivities from "./components/MyActivities";
 import MyPlaces from "./components/MyPlaces";
 import MyProfile from "./components/MyProfile";
+import { GetStarted, AboutUs } from "./components/Hero";
+
 
 
 export const UserContext = createContext(null);
@@ -34,6 +36,8 @@ function App() {
             <Route path="/Events" element={<Events />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/GetStarted" element={<GetStarted />} />
             <Route path="/CreateEvent" element={<CreateEvent />} />
             <Route path="/" element={<Home />} />
           </Routes>
