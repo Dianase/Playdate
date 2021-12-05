@@ -28,7 +28,7 @@ export default function Login() {
     signInWithPopup(auth, provider).then(afterLogin).catch(alert);
   };
   return (
-    <div className="login-form" style={{height:"90vh" }}>
+    <div className="login-form">
       <Form onSubmit={loginWithGoogle}>
         <img
           src="Xlogobg.png"
@@ -36,7 +36,7 @@ export default function Login() {
           style={{ height: "120px" }}
         />
         <h2 style={{ textAlign: "center", padding: "20px" }}>
-          Login to Xplore
+          Login to begin Xploring
         </h2>
 
         <Button
